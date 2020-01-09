@@ -1,0 +1,25 @@
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: uuid
+  mapper-locations: classpath*:mapper/*Mapper.xml
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/batch_test?serverTimezone=Asia/Shanghai&allowMultiQueries=true&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initialSize: 1
+      minIdle: 1
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
